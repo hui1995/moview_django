@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+{% load static from staticfiles %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>注册</title>
+     <link rel="stylesheet" type="text/css" href="{% static 'base/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'signup/css/signup.css' %}">
+    <script type="text/javascript" charset="utf-8" src="{% static 'base/js/jquery-3.1.1.min.js' %}"></script>
+    <script type="text/javascript" charset="utf-8" src="{% static 'signup/js/signup.js' %}"></script>
+
+
+
+
+</head>
+<body>
+
+
+<main>
+
+    <h2>用户注册</h2>
+
+    <form action="{% url 'signup' %}" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+
+         <div class="input-group">
+            <span class="input-label">账号</span>
+            <input id="account" type="text" class="form-control" placeholder="请输入用户名" aria-describedby="basic-addon1" name="userAccount">
+        </div>
+        <span id="user_tip" class="tip">请输入6-16位用户名</span>
+
+        <br/>
+        <div class="input-group">
+            <span class="input-label">密码</span>
+            <input id="pass" type="password" class="form-control" placeholder="请输入密码" aria-describedby="basic-addon1" name="userPass">
+        </div>
+        <span id="pwd_tip" class="tip">请输入6位以上拼音字母组合密码</span>
+        <br />
+        <div class="input-group">
+            <span class="input-label">确认密码</span>
+            <input id="passwd" type="password" class="form-control" placeholder="请再次输入密码" aria-describedby="basic-addon1" name="userPasswd">
+        </div>
+        <span id="pwd2_tip" class="tip">请再次输入6位以上拼音字母组合密码</span>
+          <div class="input-group">
+            <span class="input-label">邮箱</span>
+            <input id="email" type="email" class="form-control" placeholder="请输入邮箱" aria-describedby="basic-addon1" name="useremail">
+
+        </div>
+             <span id="email_tip" class="tip">请输入邮箱</span>
+
+
+        <div class="input-group">
+            <span class="input-label">头像</span>
+            <input required="required" type="file" class="form-control" aria-describedby="basic-addon1" name="userImg">
+        </div>
+
+        <div class="input-group">
+
+            <input type="submit" id="btn" class="form-control" aria-describedby="basic-addon1" value="注册">
+        </div>
+
+    </form>
+
+
+
+
+</main>
+
+
+</body>
+</html>

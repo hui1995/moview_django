@@ -1,0 +1,36 @@
+
+.item{
+    width: 100%;
+    height: 200px;
+    margin: 20px 20px;
+
+}
+.item .left{
+    width: 300px;
+    height: 220px;
+    float: left;
+
+
+}
+.item .left img{
+      width: 230px;
+    height: 200px;
+    border-radius: 15px;
+
+}
+.item .right h3{
+   padding-top: 10px;
+
+    color: cornflowerblue;
+}
+
+.item .right p{
+       padding-top: 70px;
+    line-height: 40px;
+    font-size: 14px;
+
+
+}
+.itme .right a{
+    color: red;
+}

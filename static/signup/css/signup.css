@@ -1,0 +1,36 @@
+main{
+
+
+    margin: 50px auto;
+    width: 400px;
+    height: 800px;
+    border: 1px solid orange;
+}
+main >h2{
+    margin-left: 40px;
+    margin-top: 40px;
+
+}
+main form{
+       margin-left: 40px;
+    margin-top: 40px;
+    width: 300px;
+    height: 760px;
+}
+form .input-group{
+     margin-top: 10px;
+    width: 300px;
+
+
+}
+form .input-label{
+    font-size: 15px;
+    font-weight: bold;
+    margin-top: 10px;
+}
+form input{
+    width: 300px;
+}
+#btn{
+    background-color: gray;
+}

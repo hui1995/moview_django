@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+        <link rel="stylesheet" type="text/css" href="{% static 'base/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'base/css/reset.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'base/css/swiper.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'base/css/base.css' %}">
+    <script type="text/javascript" charset="utf-8" src="{% static 'base/js/jquery-3.1.1.min.js' %}"></script>
+
+    <script type="text/javascript" charset="utf-8" src="{% static 'base/js/swiper.min.js' %}"></script>
+          <script type="text/javascript" charset="utf-8" src="{% static 'base/js/bootstrap.min.js' %}"></script>
+    {% block ss %}
+    {% endblock ss %}
+
+
+
+    <script type="text/javascript" charset="utf-8" src="{% static 'base/js/base.js' %}"></script>
+</head>
+<body>
+
+
+<header>
+
+    <div class="head_top">
+
+        <div class="logo">ROCK</div>
+        <div class="option">
+            {% if status %}
+
+                <a href="#">{{ user.usernmae }}</a>
+
+
+
+                {% else %}
+                     <a href="{% url 'login' %}">登录</a>
+            <a href="{% url 'signup' %}">注册</a>
+
+            {% endif %}
+
+
+        </div>
+
+    </div>
+<div class="banner_main">
+<div class="wrap">
+       <div class="banner">
+           <div class="swiper-container" id="topslider">
+
+                <div class="swiper-wrapper">
+        {% for item in sliderList %}
+            <div class="swiper-slide">
+
+                <a href="#">
+                    <img src="{{ item.image}}">
+                </a>
+            </div>
+        {% endfor %}
+
+    </div>
+</div>
+       </div>
+
+
+    </div>
+</div>
+<div class="nav_main">
+
+        <div class="wrap">
+     <ul class="nav nav-tabs">
+
+{% if status %}
+
+  <li role="presentation" class=" now active" id="mvies"><a href="#">推荐电影</a></li>
+  <li role="presentation" class="now " id="likels"><a href="#">收藏</a></li>
+
+
+
+
+
+
+
+
+                {% else %}
+
+
+  <li role="presentation" class="active"><a href="#">推荐电影</a></li>
+
+
+
+            {% endif %}
+
+
+
+
+</ul>
+        </div>
+
+
+
+</div>
+
+
+
+
+</div>
+
+
+
+
+
+
+
+</header>
+
+
+<main>
+
+<div class="wrap" id="maindiv">
+
+    {% for foo in moviewList %}
+
+
+        <div class="item">
+        <div class="left">
+            <img src="{{ foo.image }}">
+        </div>
+        <div class="right">
+
+            <h3>{{ foo.title }}</h3>
+            <p>{{ foo.de }}</p>
+
+            <a href="#" id="like{{ foo.postid }}" class="like" pd="{{ foo.postid }}">收藏{{ foo.like_num }}</a>
+        </div>
+
+        </div>
+        <br>
+
+    {% endfor %}
+
+
+</div>
+
+
+
+
+</main>
+
+<footer>
+
+
+</footer>
+
+</body>
+</html>

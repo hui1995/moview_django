@@ -1,0 +1,37 @@
+{% extends  'base.html'%}
+{% load static from staticfiles %}
+    {% block ss %}
+         <link rel="stylesheet" type="text/css" href="{% static 'index/css/index.css' %}">
+         <script type="text/javascript" charset="utf-8" src="{% static 'index/js/index.js' %}"></script>
+{% endblock ss %}
+
+
+
+
+
+
+{% block main %}
+
+    {% for foo in moviewList %}
+
+
+        <div class="item">
+        <div class="left">
+            <img src="{{ foo.image }}">
+        </div>
+        <div class="right">
+
+            <h3>{{ foo.title }}</h3>
+            <p>{{ foo.de }}</p>
+
+            <a href="#">收藏{{ foo.like_num }}</a>
+        </div>
+
+        </div>
+        <br>
+    
+    {% endfor %}
+    
+
+
+{% endblock main %}

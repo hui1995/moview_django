@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+{% load static from staticfiles %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>登录</title>
+         <link rel="stylesheet" type="text/css" href="{% static 'base/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'login/css/login.css' %}">
+</head>
+<body>
+
+<main>
+
+    <h2>用户注册</h2>
+
+    <form action="{% url 'login' %}" method="post" >
+        {% csrf_token %}
+
+         <div class="input-group">
+            <span class="input-label">账号</span>
+            <input id="accunt" type="text" class="form-control" placeholder="请输入用户名" aria-describedby="basic-addon1" name="username">
+        </div>
+        <span id="'user_tip" class="tip">请输入6-16位用户名</span>
+
+        <br/>
+        <div class="input-group">
+            <span class="input-label">密码</span>
+            <input id="pass" type="password" class="form-control" placeholder="请输入密码" aria-describedby="basic-addon1" name="userPass">
+        </div>
+        <span id="pwd_tip" class="tip">请输入6位以上拼音字母组合密码</span>
+
+        <div class="input-group">
+
+            <input type="submit" id="btn" class="form-control" aria-describedby="basic-addon1" value="注册">
+        </div>
+
+    </form>
+
+
+
+
+</main>
+
+</body>
+</html>
